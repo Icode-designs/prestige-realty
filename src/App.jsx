@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Homepage from "./pages/Homepage";
 import Aboutpage from "./pages/Aboutpage";
-import Contactpage from "./pages/contactpage";
+import Contactpage from "./pages/Contactpage";
 import RootLayout from "./pages/RootLayout";
 import Blog from "./pages/Blog";
 import Categoriespage from "./pages/Categoriespage";
