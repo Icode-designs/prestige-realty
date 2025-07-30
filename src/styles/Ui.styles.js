@@ -41,7 +41,7 @@ export const FlexBox = styled.div`
     `}
 `;
 
-export const GridBox = styled.div`
+export const GridBox = styled.ul`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(${pxToRem(240)}, 1fr));
   grid-column-gap: ${pxToRem(24)};
@@ -221,7 +221,7 @@ export const DetailsLinkBox = styled.div`
   }
 `;
 
-export const CardBoxStyles = styled.div`
+export const CardBoxStyles = styled.li`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: ${pxToRem(16)};

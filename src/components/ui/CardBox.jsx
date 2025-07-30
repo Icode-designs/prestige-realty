@@ -5,7 +5,7 @@ import React from "react";
 import Button from "./Button";
 
 const CardBox = ({ images, heading, paragraph, price }) => {
-  console.log("CardBox images:", images);
+  // console.log("CardBox images:", images);
   return (
     <CardBoxStyles>
       <img src={images} />

@@ -56,6 +56,13 @@ export const HeaderBox = styled.header`
       a {
         color: var(--col-10);
         font-size: ${pxToRem(32)};
+
+        &.dashboard {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: ${pxToRem(8)};
+        }
       }
 
       .active {
@@ -82,6 +89,8 @@ export const HeaderBox = styled.header`
         display: flex;
         gap: ${pxToRem(16)};
         padding: 0;
+        align-items: center;
+        width: fit-content;
         a {
           position: relative;
           padding: ${pxToRem(8)};

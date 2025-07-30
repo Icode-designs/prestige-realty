@@ -3,9 +3,12 @@ import { Link, NavLink } from "react-router-dom";
 import Button from "./Button";
 import { Heading3 } from "@/styles/Ui.styles";
 import { useAuthUser } from "@/hooks/useAuthUser";
+import { CgProfile } from "react-icons/cg";
+import { signOut } from "@/utils/signout";
 
 const Navigation = ({ isNavOpen, closeNav, footerNav = "" }) => {
   const { user } = useAuthUser();
+  // console.log("Navigation user:", user);
 
   return (
     <nav>
@@ -58,6 +61,20 @@ const Navigation = ({ isNavOpen, closeNav, footerNav = "" }) => {
             </NavLink>
           </li>
         )}
+
+        {!footerNav && user && (
+          <li>
+            <NavLink
+              to="/dashboard"
+              className="dashboard"
+              onClick={isNavOpen && closeNav}
+            >
+              <p>User</p>
+              <CgProfile />
+            </NavLink>
+          </li>
+        )}
+        {!footerNav && user && <button onClick={signOut}>Logout</button>}
       </ul>
 
       {!footerNav && !user && (

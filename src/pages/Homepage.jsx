@@ -15,6 +15,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import Info from "@/components/Info";
 import infoImg from "@/assets/Home/infoImg.jpg";
+import Reviews from "@/components/Reviews";
 
 const Homepage = () => {
   // Fetch listings
@@ -32,7 +33,7 @@ const Homepage = () => {
   } = useFetchNeighborhoods();
 
   // Debugging logs to check data fetching
-  console.log("Homepage listingsData:", neighborhoodsData);
+  // console.log("Homepage listingsData:", neighborhoodsData);
 
   // Filter featured listings and neighborhoods
   const featuredListings =
@@ -129,30 +130,27 @@ const Homepage = () => {
               If the problem pesists please contact us
             </p>
           )}
-          {!neighborhoodLoading &&
-            !neighborhoodError &&
-            (console.log("Featured Neighborhoods:", featuredNeighborhoods),
-            (
-              <GridBox>
-                {/* Map through featured neighborhoods */}
-                {featuredNeighborhoods.map((neighborhood) => {
-                  const {
-                    id,
-                    name,
-                    description,
-                    neighborhoodImagesTable: neighborhoodImages,
-                  } = neighborhood;
-                  return (
-                    <CardBox
-                      key={id}
-                      heading={name}
-                      paragraph={description}
-                      images={neighborhoodImages.url}
-                    />
-                  );
-                })}
-              </GridBox>
-            ))}
+          {!neighborhoodLoading && !neighborhoodError && (
+            <GridBox>
+              {/* Map through featured neighborhoods */}
+              {featuredNeighborhoods.map((neighborhood) => {
+                const {
+                  id,
+                  name,
+                  description,
+                  neighborhoodImagesTable: neighborhoodImages,
+                } = neighborhood;
+                return (
+                  <CardBox
+                    key={id}
+                    heading={name}
+                    paragraph={description}
+                    images={neighborhoodImages.url}
+                  />
+                );
+              })}
+            </GridBox>
+          )}
         </SectionWrapper>
 
         {/* Info Section */}
@@ -161,6 +159,8 @@ const Homepage = () => {
           paragraph={infoPara}
           heading={<h2 dangerouslySetInnerHTML={{ __html: infoHeading }} />}
         />
+
+        <Reviews />
       </MainWrapper>
     </>
   );
