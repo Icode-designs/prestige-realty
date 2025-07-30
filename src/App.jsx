@@ -10,8 +10,8 @@ import SignupPage from "./pages/SignupPage";
 import { GlobalStyleBox } from "./styles/Global.styles";
 import { loginFormAction, signupFormAction } from "./utils/authAction";
 import Loginpage from "./pages/Loginpage";
-import { useAuthUser } from "./hooks/useAuthUser";
-import { useAutoSignOut } from "./hooks/useAutoSignOut";
+// import { useAuthUser } from "./hooks/useAuthUser";
+// import { useAutoSignOut } from "./hooks/useAutoSignOut";
 
 const router = createBrowserRouter([
   {
@@ -31,8 +31,8 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  const { user } = useAuthUser();
-  useAutoSignOut(user);
+  // const { user } = useAuthUser();
+  // useAutoSignOut(user);
   return (
     <>
       <GlobalStyleBox />
