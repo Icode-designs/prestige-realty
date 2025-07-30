@@ -74,7 +74,11 @@ const Navigation = ({ isNavOpen, closeNav, footerNav = "" }) => {
             </NavLink>
           </li>
         )}
-        {!footerNav && user && <button onClick={signOut}>Logout</button>}
+        {!footerNav && user && (
+          <button className="logoutBtn" onClick={signOut}>
+            Logout
+          </button>
+        )}
       </ul>
 
       {!footerNav && !user && (

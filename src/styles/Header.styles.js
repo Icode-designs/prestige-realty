@@ -52,6 +52,11 @@ export const HeaderBox = styled.header`
       display: grid;
       grid-template-columns: 1fr;
       grid-row-gap: ${pxToRem(24)};
+      .logoutBtn {
+        color: var(--col-30);
+        background: none;
+        border: none;
+      }
 
       a {
         color: var(--col-10);
