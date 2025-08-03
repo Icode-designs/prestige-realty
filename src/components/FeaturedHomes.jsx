@@ -4,6 +4,7 @@ import {
   FlexBox,
   GridBox,
   Heading2,
+  LoaderBox,
   SectionWrapper,
 } from "@/styles/Ui.styles";
 import { useFetchListings } from "@/hooks/useFetch";
@@ -31,7 +32,7 @@ const FeaturedHomes = () => {
         <Heading2>
           <span>Featured</span> Listings{" "}
         </Heading2>
-        <Link>
+        <Link to="/listings">
           <DetailsLinkBox>
             <p>view all</p> <FaArrowRightLong className="icon" />
           </DetailsLinkBox>
@@ -39,7 +40,11 @@ const FeaturedHomes = () => {
       </FlexBox>
 
       {/* Placeholder for loading state */}
-      {listingsLoading && <p>Loading items...</p>}
+      {listingsLoading && (
+        <FlexBox $variant="centered">
+          <LoaderBox />
+        </FlexBox>
+      )}
 
       {/* Error handling for listings */}
       {listingsError && (

@@ -5,6 +5,7 @@ import {
   GridBox,
   Heading2,
   Heading3,
+  LoaderBox,
   SectionWrapper,
 } from "@/styles/Ui.styles";
 import React from "react";
@@ -25,10 +26,14 @@ const Reviews = () => {
         </Heading2>
         {user && <Button>Add review</Button>}
       </FlexBox>
-      {loading && <p>Loading reviews...</p>}
+      {loading && (
+        <FlexBox $variant="centered">
+          <LoaderBox />
+        </FlexBox>
+      )}
       {error && <p>Error loading reviews: {error.message}</p>}
       {reviewsData && reviewsData.length > 0 ? (
-        <GridBox>
+        <GridBox $variant="horizontal">
           {reviewsData.map((review) => (
             <ReviewCard key={review.id}>
               <p>{review.reviewText}</p>

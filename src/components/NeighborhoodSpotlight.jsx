@@ -4,6 +4,7 @@ import {
   FlexBox,
   GridBox,
   Heading2,
+  LoaderBox,
   SectionWrapper,
 } from "@/styles/Ui.styles";
 import { useFetchNeighborhoods } from "@/hooks/useFetch";
@@ -31,7 +32,7 @@ const NeighborhoodSpotlight = () => {
         <Heading2>
           Neighborhood <span>Spotlight</span>{" "}
         </Heading2>
-        <Link>
+        <Link to="/neighborhoods">
           <DetailsLinkBox>
             <p>view all</p> <FaArrowRightLong className="icon" />
           </DetailsLinkBox>
@@ -39,7 +40,11 @@ const NeighborhoodSpotlight = () => {
       </FlexBox>
 
       {/* Placeholder for loading state */}
-      {neighborhoodLoading && <p>Loading items...</p>}
+      {neighborhoodLoading && (
+        <FlexBox $variant="centered">
+          <LoaderBox />
+        </FlexBox>
+      )}
 
       {/* Error handling for neighborhoods */}
       {neighborhoodError && (

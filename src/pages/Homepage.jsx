@@ -7,6 +7,7 @@ import infoImg from "@/assets/Home/infoImg.jpg";
 import Reviews from "@/components/Reviews";
 import FeaturedHomes from "@/components/FeaturedHomes";
 import NeighborhoodSpotlight from "@/components/NeighborhoodSpotlight";
+import Findus from "@/components/Findus";
 
 const Homepage = () => {
   // Debugging logs to check data fetching
@@ -27,13 +28,10 @@ const Homepage = () => {
           page="home"
         />
 
-        {/* Featured Listings Section */}
         <FeaturedHomes />
 
-        {/* Featured Neighborhoods Section */}
         <NeighborhoodSpotlight />
 
-        {/* Info Section */}
         <Info
           image={infoImg}
           paragraph={infoPara}
@@ -41,6 +39,8 @@ const Homepage = () => {
         />
 
         <Reviews />
+
+        <Findus />
       </MainWrapper>
     </>
   );

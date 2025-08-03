@@ -16,7 +16,7 @@ const Navigation = ({ isNavOpen, closeNav, footerNav = "" }) => {
       <ul>
         <li>
           <NavLink
-            to="/Categories"
+            to="/neighborhoods"
             className={({ isActive }) => (isActive ? "active" : "")}
             onClick={isNavOpen && closeNav}
           >

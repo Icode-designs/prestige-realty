@@ -4,12 +4,13 @@ import Aboutpage from "./pages/Aboutpage";
 import Contactpage from "./pages/Contactpage";
 import RootLayout from "./pages/RootLayout";
 import Blog from "./pages/Blog";
-import Categoriespage from "./pages/Categoriespage";
 import Listingspage from "./pages/Listingspage";
 import SignupPage from "./pages/SignupPage";
 import { GlobalStyleBox } from "./styles/Global.styles";
 import { loginFormAction, signupFormAction } from "./utils/authAction";
 import Loginpage from "./pages/Loginpage";
+import Neighborhoodspage from "./pages/Neighborhoodspage";
+import "leaflet/dist/leaflet.css";
 // import { useAuthUser } from "./hooks/useAuthUser";
 // import { useAutoSignOut } from "./hooks/useAutoSignOut";
 
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
     element: <RootLayout />,
     children: [
       { index: true, element: <Homepage /> },
-      { path: "/categories", element: <Categoriespage /> },
+      { path: "/neighborhoods", element: <Neighborhoodspage /> },
       { path: "/listings", element: <Listingspage /> },
       { path: "/about", element: <Aboutpage /> },
       { path: "/contact", element: <Contactpage /> },

@@ -29,6 +29,7 @@ export const LogoBox = styled.div`
 export const FlexBox = styled.div`
   display: flex;
   align-items: center;
+  height: fit-content;
   ${({ $variant }) =>
     $variant === "spaced" &&
     css`
@@ -46,14 +47,19 @@ export const GridBox = styled.ul`
   grid-template-columns: repeat(auto-fit, minmax(${pxToRem(240)}, 1fr));
   grid-column-gap: ${pxToRem(24)};
   grid-row-gap: ${pxToRem(32)};
+  height: fit-content;
 
   ${({ $variant }) =>
     $variant === "horizontal" &&
     css`
       display: flex;
-      grid-template-rows: 1fr;
-      grid-template-columns: auto;
-      overflow-x: scroll;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
     `}
 `;
 
@@ -103,6 +109,7 @@ export const SectionWrapper = styled.section`
   max-width: var(--max-w);
   margin: var(--centered);
   width: 100%;
+  height: fit-content;
   padding: 0 ${pxToRem(16)};
   display: grid;
   grid-template-columns: 1fr;
@@ -243,7 +250,6 @@ export const CardBoxStyles = styled.li`
 
   &:hover {
     box-shadow: 0 ${pxToRem(6)} ${pxToRem(10)} rgba(0, 0, 0, 0.1);
-    transform: translateY(${pxToRem(-10)});
   }
 `;
 
@@ -366,6 +372,24 @@ export const InputFormBox = styled.div`
         border-top-right-radius: ${pxToRem(8)};
         border-bottom-right-radius: ${pxToRem(8)};
       }
+    }
+  }
+`;
+
+export const LoaderBox = styled.div`
+  margin: var(--centered);
+  width: ${pxToRem(40)};
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(farthest-side, var(--col-20) 94%, #0000) top/8px
+      8px no-repeat,
+    conic-gradient(#0000 30%, var(--col-20));
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 8px), #000 0);
+  animation: l13 1s infinite linear;
+
+  @keyframes l13 {
+    100% {
+      transform: rotate(1turn);
     }
   }
 `;
