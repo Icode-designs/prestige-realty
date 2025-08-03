@@ -50,7 +50,7 @@ const FeaturedHomes = () => {
       )}
 
       {!listingsLoading && !listingsError && (
-        <GridBox>
+        <GridBox $variant="horizontal">
           {/* Map through featured listings */}
           {featuredListings.map((listing) => {
             const { id, name, description, price, listingsImages } = listing;

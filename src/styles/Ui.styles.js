@@ -46,13 +46,15 @@ export const GridBox = styled.ul`
   grid-template-columns: repeat(auto-fit, minmax(${pxToRem(240)}, 1fr));
   grid-column-gap: ${pxToRem(24)};
   grid-row-gap: ${pxToRem(32)};
-  > div {
-    transition: transform 0.3s ease;
-    &:hover {
-      transform: translateY(${pxToRem(-2)}) translateX(${pxToRem(-2)});
-      box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.1);
-    }
-  }
+
+  ${({ $variant }) =>
+    $variant === "horizontal" &&
+    css`
+      display: flex;
+      grid-template-rows: 1fr;
+      grid-template-columns: auto;
+      overflow-x: scroll;
+    `}
 `;
 
 export const Heading1 = styled.h1`
@@ -228,6 +230,8 @@ export const CardBoxStyles = styled.li`
   grid-template-columns: 1fr;
   grid-gap: ${pxToRem(16)};
   border-radius: ${pxToRem(12)};
+  transition: all ease 0.3s;
+  min-width: ${pxToRem(240)};
 
   img {
     width: 100%;
@@ -235,6 +239,11 @@ export const CardBoxStyles = styled.li`
     object-position: center;
     border-radius: ${pxToRem(12)};
     height: ${pxToRem(300)};
+  }
+
+  &:hover {
+    box-shadow: 0 ${pxToRem(6)} ${pxToRem(10)} rgba(0, 0, 0, 0.1);
+    transform: translateY(${pxToRem(-10)});
   }
 `;
 

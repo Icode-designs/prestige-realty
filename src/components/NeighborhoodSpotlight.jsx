@@ -49,7 +49,7 @@ const NeighborhoodSpotlight = () => {
         </p>
       )}
       {!neighborhoodLoading && !neighborhoodError && (
-        <GridBox>
+        <GridBox $variant="horizontal">
           {/* Map through featured neighborhoods */}
           {featuredNeighborhoods.map((neighborhood) => {
             const {

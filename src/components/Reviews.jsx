@@ -10,6 +10,7 @@ import {
 import React from "react";
 import StarRating from "./ui/StarRating";
 import { useAuthUser } from "@/hooks/useAuthUser";
+import Button from "./ui/Button";
 
 const Reviews = () => {
   const { reviewsData, loading, error } = useFetchReviews();
@@ -22,7 +23,7 @@ const Reviews = () => {
         <Heading2>
           Customer <span>Reviews</span>
         </Heading2>
-        {user && <span>Add review</span>}
+        {user && <Button>Add review</Button>}
       </FlexBox>
       {loading && <p>Loading reviews...</p>}
       {error && <p>Error loading reviews: {error.message}</p>}
