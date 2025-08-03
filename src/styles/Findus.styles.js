@@ -6,4 +6,6 @@ export const FindusBox = styled.div`
   width: 100%;
   border-radius: ${pxToRem(8)};
   overflow: hidden;
+  position: relative;
+  z-index: 5;
 `;

@@ -113,7 +113,7 @@ export const SectionWrapper = styled.section`
   padding: 0 ${pxToRem(16)};
   display: grid;
   grid-template-columns: 1fr;
-  grid-row-gap: ${pxToRem(32)};
+  grid-row-gap: ${pxToRem(16)};
   background-color: var(--col-10);
   border-radius: ${pxToRem(12)};
   padding: ${pxToRem(32)} ${pxToRem(16)};

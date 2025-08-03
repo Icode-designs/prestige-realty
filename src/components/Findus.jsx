@@ -15,12 +15,12 @@ const Findus = () => {
     const parkIcon = L.divIcon({
       html: iconHTML,
       iconSize: [32, 32],
-      className: "custom-leaflet-icon", // prevent Leaflet's default styles
+      className: "custom-leaflet-icon",
     });
     const map = L.map("map", {
       center: [6.4285, 3.4442],
       zoom: 15,
-      scrollWheelZoom: false, // disables zoom with mouse scroll
+      scrollWheelZoom: false,
     });
 
     L.marker([6.4285, 3.4442], { icon: parkIcon }).addTo(map);
@@ -32,7 +32,7 @@ const Findus = () => {
     }).addTo(map);
 
     return () => {
-      map.remove(); // Clean up when component unmounts
+      map.remove();
     };
   }, []);
 
