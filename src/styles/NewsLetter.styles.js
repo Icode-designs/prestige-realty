@@ -21,15 +21,6 @@ export const NewsLetterBox = styled.section`
       text-align: center;
       color: var(--col-10);
     }
-    form {
-      width: 100%;
-      input {
-        padding: ${pxToRem(16)};
-        border-radius: ${pxToRem(8)};
-        border: none;
-        outline: none;
-      }
-    }
   }
   @media (min-width: ${pxToRem(768)}) {
     > div {

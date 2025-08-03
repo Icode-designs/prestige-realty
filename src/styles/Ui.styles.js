@@ -130,6 +130,7 @@ export const ButtonBox = styled.button`
   font-size: ${pxToRem(16)};
   font-weight: bold;
   transition: all ease 0.5s;
+  text-transform: capitalize;
 
   &:hover {
     background-color: var(--col-50);
@@ -211,12 +212,13 @@ export const DetailsLinkBox = styled.div`
   align-items: center;
   color: var(--col-60);
   .icon {
+    transform: rotate(-45deg);
     transition: transform 0.3s ease;
   }
 
   &:hover {
     .icon {
-      transform: translateX(${pxToRem(4)});
+      transform: none;
     }
   }
 `;
@@ -319,6 +321,42 @@ export const FormCardBox = styled.div`
       text-transform: capitalize;
       font-size: ${pxToRem(12)};
       font-weight: bold;
+    }
+  }
+`;
+
+export const InputFormBox = styled.div`
+  width: 100%;
+  form {
+    width: 100%;
+    display: grid;
+    justify-items: center;
+    grid-row-gap: ${pxToRem(16)};
+    input {
+      padding: ${pxToRem(16)};
+      border-radius: ${pxToRem(8)};
+      border: none;
+      outline: none;
+    }
+  }
+
+  @media (min-width: ${pxToRem(768)}) {
+    form {
+      display: flex;
+      padding: 0 ${pxToRem(40)};
+      gap: 0;
+      input {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        width: 100%;
+      }
+      div {
+        border: none;
+        padding: ${pxToRem(6)};
+        background-color: var(--col-10);
+        border-top-right-radius: ${pxToRem(8)};
+        border-bottom-right-radius: ${pxToRem(8)};
+      }
     }
   }
 `;
