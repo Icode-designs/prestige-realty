@@ -220,6 +220,7 @@ export const DetailsLinkBox = styled.div`
   gap: ${pxToRem(8)};
   align-items: center;
   color: var(--col-60);
+  font-size: ${pxToRem(12)};
   .icon {
     transform: rotate(-45deg);
     transition: transform 0.3s ease;
