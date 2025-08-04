@@ -1,6 +1,7 @@
 import React from "react";
 import {
   DetailsLinkBox,
+  ErrorBox,
   FlexBox,
   GridBox,
   Heading2,
@@ -48,10 +49,10 @@ const NeighborhoodSpotlight = () => {
 
       {/* Error handling for neighborhoods */}
       {neighborhoodError && (
-        <p>
+        <ErrorBox>
           Error loading neighborhood data, check your internet connection. If
           the problem pesists please contact us
-        </p>
+        </ErrorBox>
       )}
       {!neighborhoodLoading && !neighborhoodError && (
         <GridBox $variant="horizontal">

@@ -1,6 +1,7 @@
 import { useFetchReviews } from "@/hooks/useReview";
 import { ReviewCard } from "@/styles/Reviews.styles";
 import {
+  ErrorBox,
   FlexBox,
   GridBox,
   Heading2,
@@ -31,7 +32,12 @@ const Reviews = () => {
           <LoaderBox />
         </FlexBox>
       )}
-      {error && <p>Error loading reviews: {error.message}</p>}
+      {error && (
+        <ErrorBox>
+          Error loading reviews check your internet connection, if the problem
+          persists please contact us
+        </ErrorBox>
+      )}
       {reviewsData && reviewsData.length > 0 ? (
         <GridBox $variant="horizontal">
           {reviewsData.map((review) => (
@@ -45,7 +51,7 @@ const Reviews = () => {
           ))}
         </GridBox>
       ) : (
-        <p>No reviews available.</p>
+        (!error && !loading && <p>No reviews available.</p>) || null
       )}
     </SectionWrapper>
   );

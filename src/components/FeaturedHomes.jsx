@@ -1,6 +1,7 @@
 import React from "react";
 import {
   DetailsLinkBox,
+  ErrorBox,
   FlexBox,
   GridBox,
   Heading2,
@@ -48,10 +49,10 @@ const FeaturedHomes = () => {
 
       {/* Error handling for listings */}
       {listingsError && (
-        <p>
+        <ErrorBox>
           Error loading listings data, check your internet connection. If the
           problem pesists please contact us
-        </p>
+        </ErrorBox>
       )}
 
       {!listingsLoading && !listingsError && (

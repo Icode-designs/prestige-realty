@@ -438,3 +438,8 @@ export const SearchInputBox = styled.div`
     }
   }
 `;
+
+export const ErrorBox = styled.p`
+  text-align: center;
+  font-size: ${pxToRem(12)};
+`;
