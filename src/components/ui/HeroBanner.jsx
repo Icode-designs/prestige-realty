@@ -3,8 +3,10 @@ import React from "react";
 import Button from "./Button";
 import { Link } from "react-router-dom";
 import InputForm from "./InputForm";
+import { IoSearchOutline } from "react-icons/io5";
+import SearchInput from "./SearchInput";
 
-const HeroBanner = ({ header, paragraph, bgImg, page }) => {
+const HeroBanner = ({ header, paragraph, bgImg, page = null }) => {
   return (
     <HeroBannerBox $bgImg={bgImg}>
       <article>
@@ -13,9 +15,9 @@ const HeroBanner = ({ header, paragraph, bgImg, page }) => {
           <p>{paragraph}</p>
         </div>
         {page === "home" && (
-          <InputForm
-            placeHolder="search neighborhoods or homes"
-            btnText="search"
+          <SearchInput
+            placeHolder="search for neighborhoods and homes"
+            page={page}
           />
         )}
       </article>

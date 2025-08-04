@@ -365,6 +365,7 @@ export const InputFormBox = styled.div`
         border-bottom-right-radius: 0;
         width: 100%;
       }
+
       div {
         border: none;
         padding: ${pxToRem(6)};
@@ -390,6 +391,50 @@ export const LoaderBox = styled.div`
   @keyframes l13 {
     100% {
       transform: rotate(1turn);
+    }
+  }
+`;
+
+export const SearchInputBox = styled.div`
+  width: 100%;
+  position: relative;
+  height: fit-content;
+
+  input {
+    width: 100%;
+    padding: ${pxToRem(16)};
+    padding-right: ${pxToRem(48)};
+    outline: none;
+    border: none;
+    background-color: var(--col-10);
+    border-radius: ${pxToRem(12)};
+  }
+  .icon {
+    display: flex;
+    align-items: center;
+    padding: ${pxToRem(12)};
+    color: var(--col-40);
+    opacity: 60%;
+    position: absolute;
+    right: 0;
+  }
+
+  ul {
+    background-color: var(--col-10);
+    padding: ${pxToRem(8)};
+    max-height: ${pxToRem(200)};
+    overflow-y: scroll;
+    margin-top: ${pxToRem(8)};
+    border-radius: ${pxToRem(12)};
+    &:last-child {
+      border: none !important;
+    }
+    p {
+      border-bottom: ${pxToRem(1)} solid rgba(0, 0, 0, 0.5);
+      padding: ${pxToRem(8)};
+      color: var(--col-40);
+      font-size: ${pxToRem(8)};
+      text-align: left;
     }
   }
 `;
