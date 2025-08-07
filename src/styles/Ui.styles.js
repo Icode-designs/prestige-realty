@@ -467,4 +467,5 @@ export const SearchItemBox = styled.li`
   color: var(--col-40);
   font-size: ${pxToRem(8)};
   text-align: left;
+  cursor: pointer;
 `;
