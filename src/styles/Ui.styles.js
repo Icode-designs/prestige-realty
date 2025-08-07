@@ -30,6 +30,7 @@ export const FlexBox = styled.div`
   display: flex;
   align-items: center;
   height: fit-content;
+  gap: ${pxToRem(10)};
   ${({ $variant }) =>
     $variant === "spaced" &&
     css`
@@ -240,6 +241,8 @@ export const CardBoxStyles = styled.li`
   border-radius: ${pxToRem(12)};
   transition: all ease 0.3s;
   min-width: ${pxToRem(240)};
+  margin: ${pxToRem(10)} 0;
+  transition: transform ease 0.3s;
 
   img {
     width: 100%;
@@ -251,6 +254,7 @@ export const CardBoxStyles = styled.li`
 
   &:hover {
     box-shadow: 0 ${pxToRem(6)} ${pxToRem(10)} rgba(0, 0, 0, 0.1);
+    transform: translateY(${pxToRem(-10)});
   }
 `;
 
@@ -259,13 +263,6 @@ export const CardBoxArticle = styled.article`
   display: grid;
   grid-gap: ${pxToRem(8)};
 
-  p {
-    &.price {
-      font-weight: 600;
-      color: var(--col-60);
-      font-size: ${pxToRem(12)};
-    }
-  }
   button {
     margin-top: ${pxToRem(16)};
     justify-self: start;
@@ -430,17 +427,44 @@ export const SearchInputBox = styled.div`
     &:last-child {
       border: none !important;
     }
-    p {
-      border-bottom: ${pxToRem(1)} solid rgba(0, 0, 0, 0.5);
-      padding: ${pxToRem(8)};
-      color: var(--col-40);
-      font-size: ${pxToRem(8)};
-      text-align: left;
-    }
   }
 `;
 
 export const ErrorBox = styled.p`
   text-align: center;
   font-size: ${pxToRem(12)};
+`;
+
+export const DisplayImage = styled.img`
+  width: 100%;
+  border-radius: ${pxToRem(12)};
+  max-height: 70vh;
+  object-fit: cover;
+  object-position: center;
+`;
+
+export const MoneyDisplay = styled.p`
+  font-weight: 600;
+  color: var(--col-60);
+  font-size: ${pxToRem(16)};
+  height: fit-content;
+`;
+
+export const FeaturesBox = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: ${pxToRem(8)};
+  width: fit-content;
+
+  p {
+    opacity: 70%;
+  }
+`;
+
+export const SearchItemBox = styled.li`
+  border-bottom: ${pxToRem(1)} solid rgba(0, 0, 0, 0.5);
+  padding: ${pxToRem(8)};
+  color: var(--col-40);
+  font-size: ${pxToRem(8)};
+  text-align: left;
 `;

@@ -11,6 +11,8 @@ import { loginFormAction, signupFormAction } from "./utils/authAction";
 import Loginpage from "./pages/Loginpage";
 import Neighborhoodspage from "./pages/Neighborhoodspage";
 import "leaflet/dist/leaflet.css";
+import ListingDetailspage from "./pages/ListingDetailspage";
+import NeighborhoodDetailspage from "./pages/NeighborhoodDetailspage";
 // import { useAuthUser } from "./hooks/useAuthUser";
 // import { useAutoSignOut } from "./hooks/useAutoSignOut";
 
@@ -25,6 +27,11 @@ const router = createBrowserRouter([
       { path: "/about", element: <Aboutpage /> },
       { path: "/contact", element: <Contactpage /> },
       { path: "/blog", element: <Blog /> },
+      { path: "/listing_details/:name", element: <ListingDetailspage /> },
+      {
+        path: "/neighborhood_details/:name",
+        element: <NeighborhoodDetailspage />,
+      },
     ],
   },
   { path: "/signup", element: <SignupPage />, action: signupFormAction },

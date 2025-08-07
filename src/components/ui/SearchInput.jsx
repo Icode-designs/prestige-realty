@@ -2,6 +2,7 @@ import { useFetchListings, useFetchNeighborhoods } from "@/hooks/useFetch";
 import { SearchInputBox } from "@/styles/Ui.styles";
 import React, { useState } from "react";
 import { IoSearchOutline } from "react-icons/io5";
+import SearchItem from "./SearchItem";
 
 const SearchInput = ({ placeHolder, page }) => {
   const [searchInput, setSearchInput] = useState("");
@@ -50,9 +51,11 @@ const SearchInput = ({ placeHolder, page }) => {
         <ul>
           {searchResults && searchResults.length > 0 ? (
             searchResults.map((result) => (
-              <li key={result}>
-                <p>{result}</p>
-              </li>
+              <SearchItem
+                result={result}
+                listingNames={listingNames}
+                neighborhoodNames={neighborhoodNames}
+              />
             ))
           ) : (
             <li>
