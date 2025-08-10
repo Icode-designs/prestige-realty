@@ -13,20 +13,21 @@ import CardBox from "@/components/ui/CardBox";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
-const NeighborhoodSpotlight = () => {
+const NeighborhoodSpotlight = ({ neighborhood = "" }) => {
   // Fetch neighborhoods data
-  const {
-    neighborhoodsData,
-    error: neighborhoodError,
-    loading: neighborhoodLoading,
-  } = useFetchNeighborhoods();
+  const { neighborhoodsData, error, loading } = useFetchNeighborhoods();
 
   // Filter featured neighborhoods
-  const featuredNeighborhoods =
-    !neighborhoodLoading && !neighborhoodError
-      ? neighborhoodsData.filter((listing) => listing.featured === true)
+  let displayNeighborhoods =
+    !loading && !error
+      ? neighborhoodsData.filter((n) => n.featured === true)
       : [];
 
+  if (neighborhood && !loading && !error) {
+    displayNeighborhoods = neighborhoodsData.filter(
+      (n) => n.name !== neighborhood
+    );
+  }
   return (
     <SectionWrapper>
       <FlexBox $variant="spaced">
@@ -41,23 +42,23 @@ const NeighborhoodSpotlight = () => {
       </FlexBox>
 
       {/* Placeholder for loading state */}
-      {neighborhoodLoading && (
+      {loading && (
         <FlexBox $variant="centered">
           <LoaderBox />
         </FlexBox>
       )}
 
       {/* Error handling for neighborhoods */}
-      {neighborhoodError && (
+      {error && (
         <ErrorBox>
           Error loading neighborhood data, check your internet connection. If
           the problem pesists please contact us
         </ErrorBox>
       )}
-      {!neighborhoodLoading && !neighborhoodError && (
+      {!loading && !error && (
         <GridBox $variant="horizontal">
           {/* Map through featured neighborhoods */}
-          {featuredNeighborhoods.map((neighborhood) => {
+          {displayNeighborhoods.map((neighborhood) => {
             const {
               id,
               name,

@@ -34,15 +34,13 @@ const CardBox = ({ images, heading, paragraph, price }) => {
       <CardBoxArticle>
         <Heading3>{heading}</Heading3>
         {price && (
-          <MoneyDisplay className="price">
-            {formatToUSD(price / 1500)}
-          </MoneyDisplay>
+          <MoneyDisplay className="price">{formatToUSD(price)}</MoneyDisplay>
         )}
         <p>{trimCharacters(paragraph)}</p>
         <Link
           to={
-            (isListing && `listing_details/${slugify(heading)}`) ||
-            (isNeighborhood && `neighborhood_details/${slugify(heading)}`)
+            (isListing && `/listing_details/${slugify(heading)}`) ||
+            (isNeighborhood && `/neighborhood_details/${slugify(heading)}`)
           }
         >
           {" "}

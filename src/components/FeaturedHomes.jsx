@@ -13,7 +13,7 @@ import CardBox from "@/components/ui/CardBox";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
-const FeaturedHomes = () => {
+const FeaturedHomes = ({ listing = "", header = "" }) => {
   // Fetch listings
   const {
     listingsData,
@@ -22,16 +22,22 @@ const FeaturedHomes = () => {
   } = useFetchListings();
 
   // Filter featured listings and neighborhoods
-  const featuredListings =
+  let displayListings =
     !listingsLoading && !listingsError
       ? listingsData.filter((listing) => listing.featured === true)
       : [];
+
+  if (listing && !listingsLoading & !listingsError) {
+    displayListings = listingsData.filter(
+      (listingData) => listingData.name !== listing
+    );
+  }
 
   return (
     <SectionWrapper>
       <FlexBox $variant="spaced">
         <Heading2>
-          <span>Featured</span> Listings{" "}
+          <span>{!header ? "Featured" : header}</span> Listings{" "}
         </Heading2>
         <Link to="/listings">
           <DetailsLinkBox>
@@ -58,7 +64,7 @@ const FeaturedHomes = () => {
       {!listingsLoading && !listingsError && (
         <GridBox $variant="horizontal">
           {/* Map through featured listings */}
-          {featuredListings.map((listing) => {
+          {displayListings.map((listing) => {
             const { id, name, description, price, listingsImages } = listing;
             return (
               <CardBox

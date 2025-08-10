@@ -1,3 +1,4 @@
+import FeaturedHomes from "@/components/FeaturedHomes";
 import Findus from "@/components/Findus";
 import { useFetchListings } from "@/hooks/useFetch";
 import {
@@ -15,12 +16,15 @@ import {
 } from "@/styles/Ui.styles";
 import { formatToUSD } from "@/utils/formatPrice";
 import { slugify } from "@/utils/slugify";
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 const ListingDetailspage = () => {
   const { name } = useParams();
   const { listingsData, loading } = useFetchListings();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [name]);
 
   if (loading) {
     return <LoaderBox />;
@@ -53,7 +57,7 @@ const ListingDetailspage = () => {
       </SectionWrapper>
 
       <SectionWrapper>
-        <Heading2>Property Perks</Heading2>
+        <Heading2>Property Information</Heading2>
         <GridBox>
           <FeaturesBox>
             <Heading3>Year built</Heading3>
@@ -82,13 +86,14 @@ const ListingDetailspage = () => {
         </GridBox>
       </SectionWrapper>
       <SectionWrapper>
-        <Heading2>Property features</Heading2>
+        <Heading2>Property Features</Heading2>
         <ul>
           {listing.features.map((feature) => (
             <li key={feature}>{feature}</li>
           ))}
         </ul>
       </SectionWrapper>
+      <FeaturedHomes listing={listing.name} header="similar" />
       <Findus />
     </MainWrapper>
   );

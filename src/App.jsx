@@ -13,6 +13,7 @@ import Neighborhoodspage from "./pages/Neighborhoodspage";
 import "leaflet/dist/leaflet.css";
 import ListingDetailspage from "./pages/ListingDetailspage";
 import NeighborhoodDetailspage from "./pages/NeighborhoodDetailspage";
+import { useEffect } from "react";
 // import { useAuthUser } from "./hooks/useAuthUser";
 // import { useAutoSignOut } from "./hooks/useAutoSignOut";
 
@@ -27,9 +28,9 @@ const router = createBrowserRouter([
       { path: "/about", element: <Aboutpage /> },
       { path: "/contact", element: <Contactpage /> },
       { path: "/blog", element: <Blog /> },
-      { path: "/listing_details/:name", element: <ListingDetailspage /> },
+      { path: "listing_details/:name", element: <ListingDetailspage /> },
       {
-        path: "/neighborhood_details/:name",
+        path: "neighborhood_details/:name",
         element: <NeighborhoodDetailspage />,
       },
     ],
@@ -41,6 +42,9 @@ const router = createBrowserRouter([
 function App() {
   // const { user } = useAuthUser();
   // useAutoSignOut(user);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <GlobalStyleBox />

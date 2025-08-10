@@ -83,7 +83,7 @@ const Navigation = ({ isNavOpen, closeNav, footerNav = "" }) => {
 
       {!footerNav && !user && (
         <Link to="/signup" onClick={isNavOpen && closeNav}>
-          <Button>Signup/Login</Button>
+          <Button>Signup</Button>
         </Link>
       )}
     </nav>

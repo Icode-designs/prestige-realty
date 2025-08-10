@@ -21,7 +21,6 @@ export const GlobalStyleBox = createGlobalStyle`
 body{
     font-family: 'Poppins', sans-serif;
     font-size: ${pxToRem(16)};
-    background-color: #f1f1f1f1;
 }
 
 ul{

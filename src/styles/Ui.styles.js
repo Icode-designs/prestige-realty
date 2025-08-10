@@ -68,6 +68,7 @@ export const Heading1 = styled.h1`
   font-size: ${pxToRem(32)};
   font-weight: bold;
   line-height: 105%;
+  text-transform: capitalize;
 
   @media (min-width: ${pxToRem(600)}) {
     font-size: ${pxToRem(48)};
@@ -78,6 +79,7 @@ export const Heading2 = styled.h2`
   font-size: ${pxToRem(20)};
   font-weight: bold;
   line-height: 115%;
+  text-transform: capitalize;
 
   @media (min-width: ${pxToRem(600)}) {
     font-size: ${pxToRem(32)};
@@ -87,6 +89,7 @@ export const Heading3 = styled.h3`
   font-size: ${pxToRem(16)};
   font-weight: bold;
   line-height: 130%;
+  text-transform: capitalize;
 
   @media (min-width: ${pxToRem(600)}) {
     font-size: ${pxToRem(20)};
@@ -164,7 +167,7 @@ export const HeroBannerBox = styled.section`
   background-repeat: no-repeat;
   z-index: 10;
   width: 100%;
-  height: 80vh;
+  height: ${pxToRem(600)};
   &::after {
     content: "";
     display: block;
@@ -221,7 +224,7 @@ export const DetailsLinkBox = styled.div`
   gap: ${pxToRem(8)};
   align-items: center;
   color: var(--col-60);
-  font-size: ${pxToRem(12)};
+  font-size: ${pxToRem(14)};
   .icon {
     transform: rotate(-45deg);
     transition: transform 0.3s ease;
@@ -439,8 +442,9 @@ export const DisplayImage = styled.img`
   width: 100%;
   border-radius: ${pxToRem(12)};
   max-height: 70vh;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
+  background-color: var(--col-40);
 `;
 
 export const MoneyDisplay = styled.p`
@@ -468,4 +472,5 @@ export const SearchItemBox = styled.li`
   font-size: ${pxToRem(8)};
   text-align: left;
   cursor: pointer;
+  font-weight: bold;
 `;

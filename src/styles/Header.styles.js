@@ -83,7 +83,7 @@ export const HeaderBox = styled.header`
     }
     nav {
       display: flex;
-      gap: ${pxToRem(32)};
+      gap: ${pxToRem(16)};
       position: static;
       background: none;
       height: fit-content;
@@ -92,7 +92,7 @@ export const HeaderBox = styled.header`
       padding: 0;
       ul {
         display: flex;
-        gap: ${pxToRem(16)};
+        gap: ${pxToRem(0)};
         padding: 0;
         align-items: center;
         width: fit-content;
@@ -113,13 +113,12 @@ export const HeaderBox = styled.header`
             width: 100%;
             background-color: var(--col-20);
             height: ${pxToRem(0)};
-            transition: all ease 0.5s;
+            transition: all ease 0.2s;
             z-index: -1;
           }
           &:hover {
-            color: var(--col-10);
             &::after {
-              height: 100%;
+              height: ${pxToRem(3)};
             }
           }
         }
