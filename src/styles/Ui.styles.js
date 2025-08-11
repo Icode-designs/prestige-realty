@@ -31,6 +31,7 @@ export const FlexBox = styled.div`
   align-items: center;
   height: fit-content;
   gap: ${pxToRem(10)};
+
   ${({ $variant }) =>
     $variant === "spaced" &&
     css`
@@ -62,6 +63,13 @@ export const GridBox = styled.ul`
         display: none;
       }
     `}
+
+  ${({ $variant }) =>
+    $variant === "fixed" &&
+    css`
+      overflow-y: auto;
+      height: 100%;
+    `}
 `;
 
 export const Heading1 = styled.h1`
@@ -69,6 +77,9 @@ export const Heading1 = styled.h1`
   font-weight: bold;
   line-height: 105%;
   text-transform: capitalize;
+  p {
+    line-height: inherit;
+  }
 
   @media (min-width: ${pxToRem(600)}) {
     font-size: ${pxToRem(48)};
@@ -409,6 +420,7 @@ export const SearchInputBox = styled.div`
     border: none;
     background-color: var(--col-10);
     border-radius: ${pxToRem(12)};
+    background-color: ${({ $bg }) => $bg || "var(--col-10)"};
   }
   .icon {
     display: flex;
@@ -417,7 +429,9 @@ export const SearchInputBox = styled.div`
     color: var(--col-40);
     opacity: 60%;
     position: absolute;
+    height: 100%;
     right: 0;
+    top: 0;
   }
 
   ul {

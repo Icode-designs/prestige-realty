@@ -32,6 +32,8 @@ a{
 }
 button{
     cursor: pointer;
+    background: none;
+    border: none;
 }
 
 h1,h2,h3,p{

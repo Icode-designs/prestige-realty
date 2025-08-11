@@ -43,7 +43,7 @@ const ListingDetailspage = () => {
     <MainWrapper>
       <SectionWrapper>
         <Heading2>
-          {listing.name}, {listing.lga} {listing.town}
+          {listing.name}, {listing.lga} {listing.town} {listing.state}
         </Heading2>
         <DisplayImage
           src={listing.listingsImages?.url || ""}

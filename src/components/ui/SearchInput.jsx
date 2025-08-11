@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { IoSearchOutline } from "react-icons/io5";
 import SearchItem from "./SearchItem";
 
-const SearchInput = ({ placeHolder, page }) => {
+const SearchInput = ({ placeHolder, page, bg }) => {
   const [searchInput, setSearchInput] = useState("");
   const { listingsData } = useFetchListings();
   const { neighborhoodsData } = useFetchNeighborhoods();
@@ -37,7 +37,7 @@ const SearchInput = ({ placeHolder, page }) => {
       : [];
 
   return (
-    <SearchInputBox>
+    <SearchInputBox $bg={bg}>
       <input
         type="text"
         placeholder={placeHolder}
