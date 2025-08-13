@@ -14,6 +14,7 @@ import "leaflet/dist/leaflet.css";
 import ListingDetailspage from "./pages/ListingDetailspage";
 import NeighborhoodDetailspage from "./pages/NeighborhoodDetailspage";
 import { useEffect } from "react";
+import { ListingsAction } from "./utils/ListingsAction";
 // import { useAuthUser } from "./hooks/useAuthUser";
 // import { useAutoSignOut } from "./hooks/useAutoSignOut";
 
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Homepage /> },
       { path: "/neighborhoods", element: <Neighborhoodspage /> },
-      { path: "/listings", element: <Listingspage /> },
+      { path: "/listings", element: <Listingspage />, action: ListingsAction },
       { path: "/about", element: <Aboutpage /> },
       { path: "/contact", element: <Contactpage /> },
       { path: "/blog", element: <Blog /> },

@@ -35,7 +35,7 @@ export const InfoImgBox = styled.div`
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
     border-radius: 50%;
   }
 

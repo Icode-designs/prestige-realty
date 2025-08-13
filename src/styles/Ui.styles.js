@@ -488,3 +488,33 @@ export const SearchItemBox = styled.li`
   cursor: pointer;
   font-weight: bold;
 `;
+
+export const FilterDialog = styled.dialog`
+  background-color: var(--col-30);
+  max-width: ${pxToRem(600)};
+  width: 100%;
+  margin: auto;
+  border: none;
+  border-radius: ${pxToRem(12)};
+  padding: ${pxToRem(32)};
+  > div {
+    align-items: center;
+    margin-bottom: ${pxToRem(24)};
+    button {
+      margin: 0;
+    }
+  }
+
+  label,
+  h2 {
+    color: var(--col-10);
+    text-transform: capitalize;
+  }
+  input {
+    border: none;
+  }
+  button {
+    justify-self: right;
+    margin-top: ${pxToRem(40)};
+  }
+`;
