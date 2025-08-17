@@ -113,7 +113,7 @@ export const Heading3 = styled.h3`
 export const MainWrapper = styled.main`
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: ${pxToRem(64)};
+  grid-gap: ${pxToRem(40)};
   padding-top: ${pxToRem(62)};
 
   @media (min-width: ${pxToRem(768)}) {
@@ -590,7 +590,8 @@ export const FaqContainer = styled.div`
       border-radius: 0.375rem;
       display: flex;
       align-self: center;
-      height: fit-content;
+      height: 100%;
+      width: fit-content;
       margin-left: 1.5rem;
       transition: transform ease 0.5s;
     }
