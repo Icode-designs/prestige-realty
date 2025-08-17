@@ -566,8 +566,12 @@ export const FaqContainer = styled.div`
   grid-template-columns: 1fr;
   details {
     padding: 1rem 0;
-    height: fit-content;
     cursor: pointer;
+    max-height: ${pxToRem(100)};
+    transition: max-height ease 3s;
+    &[open] {
+      max-height: ${pxToRem(500)};
+    }
 
     summary {
       list-style: none;

@@ -29,11 +29,10 @@ function FaqSection() {
 
   return (
     <SectionWrapper>
-      <FlexBox $variant="spaced">
-        <Heading2>
-          Frequently <span>asked questions</span>
-        </Heading2>
-      </FlexBox>
+      <Heading2 $textAlign="center">
+        Frequently <span>asked questions</span>
+      </Heading2>
+
       <FaqContainer>
         {FaqData.map((data, index) => {
           return (
