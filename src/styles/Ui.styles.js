@@ -586,6 +586,7 @@ export const FaqContainer = styled.div`
     .accordion-btn {
       color: var(--col-60);
       border: 1px solid var(--col-10);
+      font-size: ${pxToRem(20)};
       border-radius: 0.375rem;
       display: flex;
       align-self: center;
