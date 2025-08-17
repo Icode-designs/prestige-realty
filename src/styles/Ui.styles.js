@@ -485,7 +485,6 @@ export const FeaturesBox = styled.div`
 `;
 
 export const SearchItemBox = styled.li`
-  border-bottom: ${pxToRem(1)} solid rgba(0, 0, 0, 0.5);
   padding: ${pxToRem(8)};
   color: var(--col-40);
   font-size: ${pxToRem(8)};
