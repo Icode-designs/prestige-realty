@@ -568,7 +568,8 @@ export const FaqContainer = styled.div`
     padding: 1rem 0;
     cursor: pointer;
     max-height: ${pxToRem(100)};
-    transition: max-height ease 3s;
+    overflow: hidden;
+    transition: max-height ease 1s;
     &[open] {
       max-height: ${pxToRem(500)};
     }
