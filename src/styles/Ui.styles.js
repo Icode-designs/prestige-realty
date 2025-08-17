@@ -77,6 +77,7 @@ export const Heading1 = styled.h1`
   font-weight: bold;
   line-height: 105%;
   text-transform: capitalize;
+  text-align: ${({ $textAlign }) => ($textAlign ? $textAlign : "inherit")};
   p {
     line-height: inherit;
   }
@@ -91,6 +92,7 @@ export const Heading2 = styled.h2`
   font-weight: bold;
   line-height: 115%;
   text-transform: capitalize;
+  text-align: ${({ $textAlign }) => ($textAlign ? $textAlign : "inherit")};
 
   @media (min-width: ${pxToRem(600)}) {
     font-size: ${pxToRem(32)};
@@ -101,6 +103,7 @@ export const Heading3 = styled.h3`
   font-weight: bold;
   line-height: 130%;
   text-transform: capitalize;
+  text-align: ${({ $textAlign }) => ($textAlign ? $textAlign : "inherit")};
 
   @media (min-width: ${pxToRem(600)}) {
     font-size: ${pxToRem(20)};
@@ -121,7 +124,7 @@ export const MainWrapper = styled.main`
 `;
 
 export const SectionWrapper = styled.section`
-  max-width: var(--max-w);
+  max-width: ${({ $maxWidth }) => ($maxWidth ? $maxWidth : "var(--max-w)")};
   margin: var(--centered);
   width: 100%;
   height: fit-content;
@@ -187,7 +190,7 @@ export const HeroBannerBox = styled.section`
     position: absolute;
     top: 0;
     left: 0;
-    opacity: 20%;
+    opacity: 25%;
     z-index: -1;
     background-color: var(--col-40);
     border-bottom-left-radius: ${pxToRem(12)};
@@ -209,6 +212,7 @@ export const HeroBannerBox = styled.section`
 
       p {
         font-weight: bold;
+        margin-top: ${pxToRem(16)};
       }
     }
   }
@@ -516,5 +520,85 @@ export const FilterDialog = styled.dialog`
   button {
     justify-self: right;
     margin-top: ${pxToRem(40)};
+  }
+`;
+
+export const ValueCardBox = styled.div`
+  margin-top: ${pxToRem(16)};
+  .values__icon {
+    color: var(--col-60);
+    font-size: ${pxToRem(70)};
+
+    @media (min-width: ${pxToRem(768)}) {
+      font-size: ${pxToRem(100)};
+    }
+  }
+  p {
+    text-align: center;
+    font-weight: bold;
+    opacity: 70%;
+  }
+`;
+
+export const TeamCard = styled.div`
+  display: grid;
+  justify-items: center;
+  margin-top: ${pxToRem(16)};
+  img {
+    width: ${pxToRem(150)};
+    height: ${pxToRem(150)};
+    border-radius: 100%;
+    margin-bottom: ${pxToRem(16)};
+    object-fit: cover;
+  }
+  p {
+    &:nth-of-type(2) {
+      opacity: 70%;
+    }
+
+    text-align: center;
+    font-weight: bold;
+  }
+`;
+
+export const FaqContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  details {
+    padding: 1rem 0;
+    height: fit-content;
+    cursor: pointer;
+
+    summary {
+      list-style: none;
+      font-size: ${pxToRem(20)};
+      font-weight: 400;
+      display: flex;
+      justify-content: space-between;
+      height: fit-content;
+    }
+
+    .accordion-btn {
+      color: var(--col-60);
+      border: 1px solid var(--col-10);
+      border-radius: 0.375rem;
+      display: flex;
+      align-self: center;
+      height: fit-content;
+      margin-left: 1.5rem;
+      transition: transform ease 0.5s;
+    }
+
+    &[open] {
+      .accordion-btn {
+        transform: rotate(90deg);
+      }
+    }
+
+    p {
+      margin-top: ${pxToRem(16)};
+      cursor: initial;
+      opacity: 70%;
+    }
   }
 `;

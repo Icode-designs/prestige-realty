@@ -8,6 +8,7 @@ import Reviews from "@/components/Reviews";
 import FeaturedHomes from "@/components/FeaturedHomes";
 import NeighborhoodSpotlight from "@/components/NeighborhoodSpotlight";
 import Findus from "@/components/Findus";
+import FaqSection from "@/components/FAQ";
 
 const Homepage = () => {
   // debuging log to check data fetching
@@ -40,6 +41,7 @@ const Homepage = () => {
         />
 
         <Reviews />
+        <FaqSection />
 
         <Findus />
       </MainWrapper>

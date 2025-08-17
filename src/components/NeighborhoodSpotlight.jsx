@@ -32,7 +32,7 @@ const NeighborhoodSpotlight = ({ neighborhood = "" }) => {
     <SectionWrapper>
       <FlexBox $variant="spaced">
         <Heading2>
-          Neighborhood <span>Spotlight</span>{" "}
+          <span>Neighborhood</span> Spotlight{" "}
         </Heading2>
         <Link to="/neighborhoods">
           <DetailsLinkBox>

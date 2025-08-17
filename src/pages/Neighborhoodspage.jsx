@@ -42,7 +42,8 @@ const Neighborhoodspage = () => {
       results = results.filter(
         (nD) =>
           nD.name.toLowerCase().includes(query) ||
-          nD.town.toLowerCase().includes(query)
+          nD.town.toLowerCase().includes(query) ||
+          nD.lga.toLowerCase().includes(query)
       );
     }
     return results;
@@ -55,7 +56,7 @@ const Neighborhoodspage = () => {
           <SearchInputBox $bg="#d3d3d3">
             <input
               type="text"
-              placeholder="search by location"
+              placeholder="search by name, town or lga"
               value={filterParameters.searchEntry}
               onChange={handleChange}
             />
@@ -63,9 +64,6 @@ const Neighborhoodspage = () => {
               <IoSearchOutline size={24} />
             </div>
           </SearchInputBox>
-          <button>
-            <FaFilter size={24} color="var(--col-30)" />
-          </button>
         </FlexBox>
 
         {/* <FilterDialogContainer
