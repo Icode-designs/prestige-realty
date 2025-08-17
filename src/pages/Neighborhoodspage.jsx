@@ -28,6 +28,10 @@ const Neighborhoodspage = () => {
     }));
   }
 
+  if (!loading) {
+    console.log(neighborhoodsData);
+  }
+
   const displayNeighborhoods = useMemo(() => {
     if (!neighborhoodsData) {
       return [];
@@ -73,8 +77,8 @@ const Neighborhoodspage = () => {
           {loading && <LoaderBox />}
           {error && (
             <ErrorBox>
-              Error loading listings, reload or check your internet connection.
-              Please contact us if the problem persists.
+              Error loading Neighborhoods, reload or check your internet
+              connection. Please contact us if the problem persists.
             </ErrorBox>
           )}
           {!loading &&
