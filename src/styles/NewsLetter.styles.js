@@ -20,6 +20,9 @@ export const NewsLetterBox = styled.section`
     article {
       text-align: center;
       color: var(--col-10);
+      p {
+        opacity: 100%;
+      }
     }
   }
   @media (min-width: ${pxToRem(768)}) {

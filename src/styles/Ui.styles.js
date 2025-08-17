@@ -470,6 +470,7 @@ export const MoneyDisplay = styled.p`
   color: var(--col-60);
   font-size: ${pxToRem(16)};
   height: fit-content;
+  opacity: 100%;
 `;
 
 export const FeaturesBox = styled.div`

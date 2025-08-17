@@ -55,7 +55,9 @@ input, textarea {
     padding: ${pxToRem(10)};
     resize: none; 
 }
-
+p{
+    opacity: 80%;
+}
 
  
   
