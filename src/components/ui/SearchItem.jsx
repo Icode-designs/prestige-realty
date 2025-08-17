@@ -16,7 +16,6 @@ const SearchItem = ({ result, listingNames, neighborhoodNames }) => {
       >
         {result}
       </Link>
-      ;
     </SearchItemBox>
   );
 };
